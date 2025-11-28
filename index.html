@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Трекер игры">
+    <title>Трекер настольной игры</title>
+    <link rel="stylesheet" href="StyleBg.css">
+    <script src="ScriptBg.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>🍃</h1>
+            </div>
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab('counters')">🧮</button>
+                <button class="tab-btn" onclick="switchTab('notes')">📒</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="counters" class="tab-content active">
+                <button class="add-player-btn" onclick="addPlayer()">+ Add player</button>
+                <div id="players-container"></div>
+            </div>
+
+            <div id="notes" class="tab-content">
+                <div id="notes-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="save-indicator" id="saveIndicator">Saved ✓</div>
+
+</body>
+</html>
