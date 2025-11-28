@@ -379,3 +379,37 @@ body {
 .save-indicator.show {
     opacity: 1;
 }
+/* ← все твои стили остаются как есть → */
+
+/* ========== ФИКС ДЛЯ SAFARI НА ГЛАВНОМ ЭКРАНЕ ========== */
+@supports (-webkit-touch-callout: none) and (display: -webkit-box) {
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overscroll-behavior-y: contain;
+    }
+
+    .main-content {
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: none;
+    }
+}
+/* Фикс ТОЛЬКО для Safari в режиме "Добавлено на главный экран" */
+@supports (-webkit-touch-callout: none) and (display: -webkit-box) {
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overscroll-behavior-y: contain;     /* ← главное */
+    }
+
+    .main-content {
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* плавный скролл в iOS */
+        overscroll-behavior-y: none;       /* ← второе главное */
+    }
+}
